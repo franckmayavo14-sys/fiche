@@ -1,0 +1,27 @@
+Algorithme Analyse_phrase
+    Variables
+        longueur : entier := 0;
+        nb_mots : entier := 1;
+        nb_voyelles : entier := 0;
+        c : caractère;
+    Début
+        Ecrire ("Entrez une phrase : ");
+        Lire (c);
+        Tandis_que c <> '.' Faire
+            longueur := longueur + 1;
+            //Vérification des voyelles
+            Si c = 'o' ou c = 'e' ou c = 'i' ou c = 'a' ou c = 'u' ou c = 'y' Alors
+                nb_voyelles := nb_voyelles + 1;
+            Fin_Si
+            //Vérification des espaces pour compter les mots
+            Si c = ' ' Alors
+                nb_mots := nb_mots + 1;
+            Fin_Si
+            Lire (c);
+        Fin_Tandis_que
+        // on compte le point final dans la longueur
+        longueur := longueur + 1;
+        Ecrire ("Longueur de la phrase : ", longueur);
+        Ecrire ("Nombre de mots : ", nb_mots);
+        Ecrire ("Nombre de voyelles : ", nb_voyelles);
+    Fin
