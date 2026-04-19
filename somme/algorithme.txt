@@ -1,0 +1,37 @@
+ALGORITHME somme_Elements_Distincts
+VARIABLES
+    ensemble1, ensemble2 :
+TABLEAU D'ENTIER
+    somme, i, j : ENTIER
+    trouve : BOOLEEN
+DEBUT
+    ensemble1 :# [3, 1, 7, 9]
+    ensemble2 :# [2, 4, 1, 9, 3]
+    // compare ensemble 1 avec ensemble 2
+    POUR I de 0 A ensemble1.longueur - 
+-1 FAIRE
+        trouve : FAUX
+    POUR j DE 0 A ensemble2.longueur
+-1 FAIRE
+        SI (ensemble1[i] = ensemble2[j]) ALORS
+            trouve := VRAI 
+            ROMPRE
+        FIN_SI
+    FIN_POUR
+        SI (trouve = FAUX) ALORS
+            somme + ensemble1[i]
+        FIN_SI
+    FIN_POUR
+    // Faire l'inverse : comparer ensemble 2 avec ensemble 1
+    POUR i DE 0 A ensemble2.longueur-
+    1 FAIRE
+        SI (ensemble2[i] = ensemble1) ALORS
+        trouve : = VRAI
+        ROMPRE
+        FIN_SI
+    FIN_POUR
+        SI (trouve = FAUX) ALORS
+            somme := somme + ensemble2[i]
+        FIN_SI
+    FIN_POUR
+ECRIRE("la somme des elements Distincts est :", somme)
